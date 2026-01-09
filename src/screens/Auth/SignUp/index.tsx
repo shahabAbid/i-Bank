@@ -183,8 +183,10 @@ const SignUp = ({ navigation }: any) => {
             </Modal>
 
             <View style={styles.wrapper3}>
+              <TouchableOpacity onPress={() => navigation.navigate('BottomNavigator')}>
               <Text style={styles.textstyle}>Have an account?  </Text>
-              <TouchableOpacity onPress={() => navigation.navigate('SingIn')}>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => navigation.navigate('SignIn')}>
                 <Text style={styles.textstyle2}>Sign In</Text>
               </TouchableOpacity>
             </View>

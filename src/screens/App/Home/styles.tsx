@@ -72,20 +72,18 @@ const styles = StyleSheet.create({
 
   banknametext:{
     fontSize: AppFontSize.TITLE1,
-    fontFamily: AppFontsFamily.Poppins_Bold,
+    fontFamily: AppFontsFamily.Orbitron_Black,
     color: AppColors.Primary.DarkBlue,
-    marginStart: WP('15'),
-    fontWeight: 'bold',
+    marginStart: WP('17'),
   },
 
   cardmiddle:{
     width: '100%',
-    
   },
 
   accnum:{
     fontSize: AppFontSize.TITLE2,
-    fontFamily: AppFontsFamily.Poppins_Bold,
+    fontFamily: AppFontsFamily.Orbitron_Black,
     color: AppColors.Neutrals.White,
     marginStart: WP('17'),
     marginBottom: WP('3')

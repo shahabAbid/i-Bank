@@ -58,7 +58,7 @@ const Home = () => {
             <View style={styles.cardframe}>
               <Image
                 source={item.Image}
-                style={{ width: WP('91'), height: WP('51') }}
+                style={{ width: WP('100'), height: WP('51') }}
                 resizeMode="contain"
               />
               <View style={styles.Cardoverlay}>
