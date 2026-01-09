@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
 
   headingtext:{
     marginLeft: WP('5%'),
-    fontFamily:AppFontsFamily.Poppins_SemiBold,
+    fontFamily: AppFontsFamily.Poppins_SemiBold,
     fontSize: AppFontSize.TITLE2,
     color: AppColors.Neutrals.White,
   },

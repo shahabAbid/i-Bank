@@ -9,11 +9,9 @@ const styles = StyleSheet.create({
 
   bluebg: {  
     width: '100%',
-    flex: 1,
+    height: WP('42'),
      backgroundColor: AppColors.Primary.DarkBlue,
   },
-
- 
 
   Whitebg: {
     width: '100%',
@@ -56,7 +54,7 @@ const styles = StyleSheet.create({
     width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: WP('5')
+    marginTop: WP('2')
   },
 
   Cardoverlay:{

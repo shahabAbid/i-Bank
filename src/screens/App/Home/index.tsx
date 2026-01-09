@@ -3,6 +3,7 @@ import React from 'react';
 import styles from './styles';
 import { appIcons } from '../../../shared/assets';
 import Carousel from 'react-native-reanimated-carousel';
+import { WP } from '../../../shared/exporter';
 
 const Home = () => {
   const { width: screenWidth } = Dimensions.get('window');
@@ -57,7 +58,7 @@ const Home = () => {
             <View style={styles.cardframe}>
               <Image
                 source={item.Image}
-                style={{ width: 327, height: 204 }}
+                style={{ width: WP('91'), height: WP('51') }}
                 resizeMode="contain"
               />
               <View style={styles.Cardoverlay}>
