@@ -12,7 +12,7 @@ import { sendEmailVerification } from '@react-native-firebase/auth';
 
 
 
-const SingUp = ({ navigation }: any) => {
+const SignUp = ({ navigation }: any) => {
   const [name, setname] = useState('');
   const [email, setEmail] = useState('');
   const [Password, setPassword] = useState('');
@@ -195,4 +195,4 @@ const SingUp = ({ navigation }: any) => {
   );
 };
 
-export default SingUp;
+export default SignUp;
