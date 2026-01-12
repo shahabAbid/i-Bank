@@ -1,37 +1,15 @@
-import { View, Text, Image, Dimensions } from 'react-native';
+import { View, Text, Image, Dimensions, TouchableOpacity } from 'react-native';
 import React from 'react';
 import styles from './styles';
 import { appIcons } from '../../../shared/assets';
 import Carousel from 'react-native-reanimated-carousel';
-import { WP } from '../../../shared/exporter';
+import { APP_CONST, WP } from '../../../shared/exporter';
 
 const Home = () => {
   const { width: screenWidth } = Dimensions.get('window');
 
-  const carddata = [
-    // {id: 1, Image: require('../../../assets/Images/DigitalCard1.png'), name: 'Shahab Abid', Acc: '1234 **** **** 1121', Cvv: '890', BankName: 'IBank'},
-    {
-      id: 2,
-      Image: require('../../../assets/Images/DigitalCard2.png'),
-      name: 'SHAHAB ABID',
-      // Acc: '1234 **** **** 1121',
-      // BankName: 'IBank',
-    },
-    {
-      id: 3,
-      Image: require('../../../assets/Images/DigitalCard3.png'),
-      name: 'SHAHAB ABID',
-      Acc: '1234 **** **** 1121',
-      BankName: 'I-Bank',
-    },
-    {
-      id: 4,
-      Image: require('../../../assets/Images/DigitalCard4.png'),
-      name: 'SHAHAB ABID',
-      Acc: '1234 **** **** 1121',
-      BankName: 'I-Bank',
-    },
-  ];
+  const carddata = APP_CONST.card_data
+  const btnsdata = APP_CONST.btns_data
   return (
     <View style={styles.container}>
       {/* Header */}
@@ -73,6 +51,16 @@ const Home = () => {
             </View>
           )}
         />
+        <View style={styles.wrapper}>
+          <View style={styles.grid}>
+              {btnsdata.map(item => (
+                <TouchableOpacity style={styles.btnsize}>
+                  <Image source={item.Image}/>
+                  <Text style={styles.btntextstyle}>{item.tittle}</Text>
+                </TouchableOpacity>
+              ))}
+              </View>
+        </View>
       </View>
     </View>
   );

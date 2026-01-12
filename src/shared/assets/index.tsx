@@ -23,6 +23,15 @@ export const appIcons = {
     Messagetab: require('../../assets/svg/Messagetab.png'),
     Settingtab:require('../../assets/svg/Settingtab.png'),
     Bell: require('../../assets/svg/Homebell.png'),
+    Account: require('../../assets/svg/Group9.png'),
+    Transfer : require('../../assets/svg/Group8.png'),
+    Withdraw: require('../../assets/svg/Group7.png'),
+    Mobileprepaid : require('../../assets/svg/Group6.png'),
+    Paythebill: require('../../assets/svg/Group5.png'),
+    Saveonline: require('../../assets/svg/Group4.png'),
+    Creditcard: require('../../assets/svg/Group3.png'),
+    Transactionreport: require('../../assets/svg/Group2.png'),
+    Beneficiary : require('../../assets/svg/Group1.png'),
 }
 export const appGifs = {
   Emailgif: require('../../assets/gif/email.gif'),
