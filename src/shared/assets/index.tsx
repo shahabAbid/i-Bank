@@ -10,6 +10,10 @@ export const appImages = {
     Card2: require('../../assets/Images/DigitalCard2.png'),
     Card3: require('../../assets/Images/DigitalCard3.png'),
     Card4: require('../../assets/Images/DigitalCard4.png'),
+    Search1: require('../../assets/Images/Group 472.png'),
+    Search2: require('../../assets/Images/Group 478.png'),
+    Search3: require('../../assets/Images/Group 477.png'),
+    Search4: require('../../assets/Images/Group 490.png'),
 };
 
 // App Icons
