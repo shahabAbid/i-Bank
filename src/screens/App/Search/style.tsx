@@ -40,6 +40,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
+
   wrapper3:{
     flexDirection: 'column',
     
@@ -50,7 +51,7 @@ const styles = StyleSheet.create({
     fontFamily: AppFontsFamily.Poppins_SemiBold,
     color: AppColors.Neutrals.DarkGray,
     marginStart: WP('5'),
-    marginTop: WP('7'),
+    marginTop: WP('5'),
   },
 
   cardtext2:{
@@ -58,6 +59,11 @@ const styles = StyleSheet.create({
     fontSize: AppFontSize.CAPTION2,
     color: AppColors.Neutrals.MediumGray,
     marginStart: WP('5'),
+  },
+
+  imagestyle:{
+    marginRight: WP('3'),
+    marginTop: WP('4'),
   }
 });
 export default styles;
