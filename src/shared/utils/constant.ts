@@ -43,9 +43,9 @@ export const APP_CONST = {
     ],
 
     searchscreen_data: [
-      {id:1, Image: appImages.Search1, tittle: 'Branch', tittle2: 'Search for branch', },
-      {id:2, Image: appImages.Search2, tittle: 'Interest rate', tittle2: 'Search for interest rate', },
-      {id:3, Image: appImages.Search3, tittle: 'Exchange rate', tittle2: 'Search for exchange rate', },
-      {id:4, Image: appImages.Search4, tittle: 'Exchange', tittle2: 'Exchange amount of money', },
+      {id:1, Image: appImages.Search1, tittle: 'Branch', tittle2: 'Search for branch', Screen: 'Branch' },
+      {id:2, Image: appImages.Search2, tittle: 'Interest rate', tittle2: 'Search for interest rate', Screen: 'Interestrate' },
+      {id:3, Image: appImages.Search3, tittle: 'Exchange rate', tittle2: 'Search for exchange rate', Screen: 'Exchangerate'},
+      {id:4, Image: appImages.Search4, tittle: 'Exchange', tittle2: 'Exchange amount of money', Screen: 'Exchange'},
     ]
 };
