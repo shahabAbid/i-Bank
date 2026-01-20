@@ -130,6 +130,7 @@ const AppInput: React.FC<AppInputProps> = ({
 
         {rightIcon && (
           <TouchableOpacity
+activeOpacity={1}
             activeOpacity={0.7}
             onPress={() => {
               setShowPass(prev => !prev);

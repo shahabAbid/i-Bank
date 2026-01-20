@@ -31,6 +31,7 @@ const AppHeader: React.FC<AppHeaderProps> = ({
     <>
       <View style={[styles.container]}>
         <TouchableOpacity
+activeOpacity={1}
           activeOpacity={0.7}
           style={styles.leftIconContainer}
           onPress={() => (onPressBack ? onPressBack() : navigation.goBack())}>
@@ -39,6 +40,7 @@ const AppHeader: React.FC<AppHeaderProps> = ({
         <Text style={styles.textStyle}>{title}</Text>
         {rightIcon ? (
           <TouchableOpacity
+activeOpacity={1}
             activeOpacity={0.7}
             style={styles.rightIconContainer}
             onPress={onPressView}>

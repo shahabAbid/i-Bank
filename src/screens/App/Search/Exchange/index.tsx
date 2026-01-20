@@ -8,7 +8,8 @@ const Exchange = ({ navigation }: any) => {
   return (
     <View style={styles.container}>
        <View style={styles.wrapper}>
-        <TouchableOpacity onPress={() => navigation.goBack('BottomNavigator')}>
+        <TouchableOpacity
+activeOpacity={1} onPress={() => navigation.goBack('BottomNavigator')}>
         <Image source={appIcons.BackIcon} style={styles.backIcon}/>
         </TouchableOpacity>
         <Text style={styles.headingtext}>Search</Text> 

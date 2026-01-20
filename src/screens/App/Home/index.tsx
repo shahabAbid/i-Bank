@@ -54,7 +54,8 @@ const Home = () => {
         <View style={styles.wrapper}>
           <View style={styles.grid}>
               {btnsdata.map(item => (
-                <TouchableOpacity style={styles.btnsize}>
+                <TouchableOpacity
+activeOpacity={1} style={styles.btnsize}>
                   <Image source={item.Image}/>
                   <Text style={styles.btntextstyle}>{item.tittle}</Text>
                 </TouchableOpacity>

@@ -11,7 +11,8 @@ const Search = ({ navigation }: any) => {
   return (
     <View style={styles.container}>
       <View style={styles.wrapper}>
-        <TouchableOpacity onPress={() => navigation.goBack('BottomNavigator')}>
+        <TouchableOpacity
+activeOpacity={1} onPress={() => navigation.goBack('BottomNavigator')}>
         <Image source={appIcons.BackIcon} style={styles.backIcon}/>
         </TouchableOpacity>
         <Text style={styles.headingtext}>Search</Text> 
@@ -23,8 +24,8 @@ const Search = ({ navigation }: any) => {
       showsVerticalScrollIndicator={false}
       keyExtractor={(item: any) => item.id.toString()}
       renderItem={({ item }) => (
-        <TouchableOpacity 
-        activeOpacity={1}
+        <TouchableOpacity
+        activeOpacity={1} 
         onPress={() => navigation.navigate(item.Screen)}>
         <View style={styles.cardstyle}>
           

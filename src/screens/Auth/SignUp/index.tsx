@@ -50,7 +50,8 @@ const SignUp = ({ navigation }: any) => {
           {/* bluebg */}
           <View style={styles.bluebg}>
             <View style={styles.wrapper2}>
-              <TouchableOpacity onPress={() => navigation.goBack('SignIn')}>
+              <TouchableOpacity
+activeOpacity={1} onPress={() => navigation.goBack('SignIn')}>
                 <Image source={appIcons.BackIcon} style={styles.backIcon} />
               </TouchableOpacity>
               <Text style={styles.headingtext}>SingUp</Text>
@@ -102,7 +103,8 @@ const SignUp = ({ navigation }: any) => {
             />
 
             <View style={styles.wrapper4}>
-              <TouchableOpacity onPress={() => setchecked(!checked)}>
+              <TouchableOpacity
+activeOpacity={1} onPress={() => setchecked(!checked)}>
                 <View style={styles.checkbox}>
                   {checked && (
                     <Image
@@ -117,7 +119,8 @@ const SignUp = ({ navigation }: any) => {
                 <Text style={styles.termstext}>
                   By creating an account your aggree to our{' '}
                 </Text>
-                <TouchableOpacity >
+                <TouchableOpacity
+activeOpacity={1} >
                   <Text style={styles.termstextstyle2}>Term and Condtions</Text>
                 </TouchableOpacity>
               </View>
@@ -183,10 +186,12 @@ const SignUp = ({ navigation }: any) => {
             </Modal>
 
             <View style={styles.wrapper3}>
-              <TouchableOpacity onPress={() => navigation.navigate('BottomNavigator')}>
+              <TouchableOpacity
+activeOpacity={1} onPress={() => navigation.navigate('BottomNavigator')}>
               <Text style={styles.textstyle}>Have an account?  </Text>
               </TouchableOpacity>
-              <TouchableOpacity onPress={() => navigation.navigate('SignIn')}>
+              <TouchableOpacity
+activeOpacity={1} onPress={() => navigation.navigate('SignIn')}>
                 <Text style={styles.textstyle2}>Sign In</Text>
               </TouchableOpacity>
             </View>

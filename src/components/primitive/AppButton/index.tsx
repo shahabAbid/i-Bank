@@ -26,6 +26,7 @@ const AppButton: React.FC<AppButtonProps> = ({
     disabled,
 }) => (
     <TouchableOpacity
+activeOpacity={1}
     disabled={disabled}
     activeOpacity={0.7}
     onPress={handleClick}

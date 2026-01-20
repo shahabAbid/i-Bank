@@ -41,7 +41,8 @@ const ForgetPass = ({ navigation }: any) => {
   return (
     <View>
       <View style={styles.wrapper1}>
-        <TouchableOpacity onPress={() => navigation.goBack('SignIn')}>
+        <TouchableOpacity
+activeOpacity={1} onPress={() => navigation.goBack('SignIn')}>
           <Image source={appIcons.BackIcon} style={styles.backIcon} />
         </TouchableOpacity>
         <Text style={styles.headingtext}>ForgetPass</Text>

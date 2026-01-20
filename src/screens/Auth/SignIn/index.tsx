@@ -56,7 +56,8 @@ const Login = ({ navigation }: any) => {
         {/* bluebg */}
         <View style={styles.bluebg}>
           <View style={styles.wrapper2}>
-            <TouchableOpacity onPress={() => navigation.goBack('')}>
+            <TouchableOpacity
+activeOpacity={1} onPress={() => navigation.goBack('')}>
             <Image source={appIcons.BackIcon} style={styles.backIcon} />
             </TouchableOpacity>
             <Text style={styles.headingtext}>SignIn</Text>
@@ -96,7 +97,8 @@ const Login = ({ navigation }: any) => {
         />
 
         <View style={styles.forgettextcontainer}>
-          <TouchableOpacity onPress={() => navigation.navigate('ForgetPass')}>
+          <TouchableOpacity
+activeOpacity={1} onPress={() => navigation.navigate('ForgetPass')}>
         <Text style={styles.forgetpasstext}>Forget Your Password?</Text>
         </TouchableOpacity>
         </View>
@@ -144,6 +146,7 @@ const Login = ({ navigation }: any) => {
           
             <Text style={styles.textstyle}>Don't have an account? </Text>
             <TouchableOpacity
+activeOpacity={1}
             onPress={() => navigation.navigate('SingUp')}
             >
             <Text style={styles.textstyle2}>Sign Up</Text>
