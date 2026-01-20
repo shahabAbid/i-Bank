@@ -1,61 +1,76 @@
-import { View, Text, StyleSheet, ViewStyle, TextStyle, TextInput,  StyleProp, Image, } from 'react-native'
-import React, { useState } from 'react'
-import { AppColors, AppFontsFamily, AppFontSize, appIcons, WP } from '../../../shared/exporter';
+import {
+  View,
+  Text,
+  StyleSheet,
+  ViewStyle,
+  TextStyle,
+  TextInput,
+  StyleProp,
+  Image,
+} from 'react-native';
+import React, { useState } from 'react';
+import {
+  AppColors,
+  AppFontsFamily,
+  AppFontSize,
+  appIcons,
+  WP,
+} from '../../../shared/exporter';
 
-
-type props = {
-    touched?: any
-    value?: string;
-    onChangeText: (text: string) => void;
-    placeHolder?: string;
-    rightIcon?: boolean;
-    rightText?: boolean;
-    appSearchContianer?: StyleProp<ViewStyle>;
-    appSearchInput?: StyleProp<TextStyle>;
-    editable?: boolean;
-    autoCapitalize?: 'none' | 'sentences' | 'words' | 'characters';
-    onEndEditing?: () => void;
-    onSubmitEditing?: () => void;
-    maxlength?: number;
-    multiline?: boolean;
+type Props = {
+  touched?: boolean;
+  value?: string;
+  onChangeText: (text: string) => void;
+  placeHolder?: string;
+  rightIcon?: boolean;
+  rightText?: boolean;
+  leftIcon?: React.ReactNode;
+  appSearchContainer?: StyleProp<ViewStyle>;
+  appSearchInput?: StyleProp<TextStyle>;
+  editable?: boolean;
+  autoCapitalize?: 'none' | 'sentences' | 'words' | 'characters';
+  onEndEditing?: () => void;
+  onSubmitEditing?: () => void;
+  maxLength?: number;
+  multiline?: boolean;
 };
 
-const AppSearchBar: React.FC<props> = ({
-    touched,
-    value,
-    onChangeText,
-    placeHolder = 'Search Here',
-    rightIcon,
-    rightText,
-    appSearchContianer,
-    appSearchInput,
-    autoCapitalize,
-    editable = true,
-    onEndEditing,
-    onSubmitEditing,
-    maxlength,
-    multiline = true,
+const AppSearchBar: React.FC<Props> = ({
+  touched = false,
+  value,
+  onChangeText,
+  placeHolder = 'Search Here',
+  rightIcon = false,
+  rightText = false,
+  leftIcon,
+  appSearchContainer,
+  appSearchInput,
+  autoCapitalize = 'none',
+  editable = true,
+  onEndEditing,
+  onSubmitEditing,
+  maxLength,
+  multiline = true,
 }) => {
-    const [isFocused, setIsFocused] = useState(touched);
-    const inputRightIcon = 
-    rightIcon === true ?(
-        <Image source={appIcons.Bell} style={{ width: 22, height: 22, marginRight: WP('4') }}/>
-    ) : (
-        rightIcon
-    )
+  const [isFocused, setIsFocused] = useState<boolean>(touched);
+
+  const inputRightIcon =
+    rightIcon ? (
+      <Image
+        source={appIcons.Bell}
+        style={{ width: 22, height: 22, marginRight: WP('4') }}
+      />
+    ) : null;
+
   return (
-    <View style={
-        [
-            AppSearchContainer(),
-         appSearchContianer
-        ]
-    }>
-     <TextInput style={
-        [
-        AppSearchInput(!!rightIcon, !!rightText), 
-        appSearchInput
-        ]
-        }
+    <View style={[AppSearchContainer(isFocused), appSearchContainer]}>
+      {leftIcon}
+
+      <TextInput
+        style={[
+          AppSearchInput(rightIcon, rightText),
+          appSearchInput,
+        ]}
         placeholder={placeHolder}
         onChangeText={onChangeText}
         value={value}
@@ -65,49 +80,59 @@ const AppSearchBar: React.FC<props> = ({
         onSubmitEditing={onSubmitEditing}
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
-        maxLength={maxlength}
+        maxLength={maxLength}
         multiline={multiline}
-        />
+      />
+
+      {inputRightIcon}
+
+      {rightText && (
+        <Text style={styles.rightText}>Cancel</Text>
+      )}
     </View>
-  )
+  );
+};
+
+function AppSearchContainer(isFocused: boolean): ViewStyle {
+  return {
+    position: 'relative',
+    width: WP('82'),
+    height: WP('12'),
+    borderRadius: 15,
+    alignItems: 'center',
+    alignSelf: 'center',
+    flexDirection: 'row',
+    borderWidth: 1,
+    borderColor: isFocused
+      ? AppColors.Primary.DarkBlue
+      : AppColors.Neutrals.LightSilver,
+  };
 }
 
-    function AppSearchContainer() :ViewStyle {
-        return{
-            position: 'relative',
-            width: WP('82'),
-            height: WP('12'),
-            borderRadius: 15,
-            alignItems: 'center',
-            alignSelf: 'center',
-            flexDirection: 'row',
-            borderWidth: 1,
-            borderColor: AppColors.Neutrals.LightSilver,
-        }
-    };
-
-    function AppSearchInput (rightIcon: boolean, rightText: boolean): ViewStyle{
-        return {
-            width: WP('70'),
-            height: WP('12'),
-            color: AppColors.Neutrals.DarkGray,
-            fontSize: AppFontSize.BODY3,
-            fontFamily: AppFontsFamily.Poppins_Medium,
-            paddingStart: WP('4'),
-        } as TextStyle;
-    }
+function AppSearchInput(
+  rightIcon: boolean,
+  rightText: boolean
+): TextStyle {
+  return {
+    width: WP('70'),
+    height: WP('12'),
+    color: AppColors.Neutrals.DarkGray,
+    fontSize: AppFontSize.BODY3,
+    fontFamily: AppFontsFamily.Poppins_Medium,
+    paddingStart: WP('4'),
+    paddingRight:
+      rightIcon || rightText ? WP('10') : WP('4'),
+  };
+}
 
 const styles = StyleSheet.create({
-
-    rightText: {
+  rightText: {
     position: 'absolute',
     right: WP('4'),
     color: AppColors.Neutrals.DarkGray,
     fontSize: AppFontSize.BODY1,
     fontFamily: AppFontsFamily.Poppins_Black,
   },
+});
 
-    
-})
-
-export default AppSearchBar
+export default AppSearchBar;

@@ -23,7 +23,9 @@ const Search = ({ navigation }: any) => {
       showsVerticalScrollIndicator={false}
       keyExtractor={(item: any) => item.id.toString()}
       renderItem={({ item }) => (
-        <TouchableOpacity onPress={() => navigation.navigate(item.Screen)}>
+        <TouchableOpacity 
+        activeOpacity={1}
+        onPress={() => navigation.navigate(item.Screen)}>
         <View style={styles.cardstyle}>
           
           <View style={styles.wrapper2}>

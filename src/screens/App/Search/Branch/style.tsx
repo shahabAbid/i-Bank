@@ -31,8 +31,23 @@ const styles = StyleSheet.create({
   mapframe:{
     width: '100%',
     height: WP('80'),
-    backgroundColor: 'red',
+    backgroundColor: AppColors.Neutrals.White,
     marginTop: WP('4'),
+  },
+
+  searchbar:{
+    marginTop: WP('10'),
+    width: '90%',
+    height: WP('15'),
+    alignSelf: 'center',
+    borderRadius: 25,
+  },
+
+  mapview:{
+    width: '100%',
+    height: '100%',
+    borderRadius: 15,
+    alignSelf: 'center',
   }
 })
 

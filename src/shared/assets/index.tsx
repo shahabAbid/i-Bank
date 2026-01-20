@@ -36,6 +36,7 @@ export const appIcons = {
     Creditcard: require('../../assets/svg/Group3.png'),
     Transactionreport: require('../../assets/svg/Group2.png'),
     Beneficiary : require('../../assets/svg/Group1.png'),
+    Searchleft: require('../../assets/svg/search1.png')
 }
 export const appGifs = {
   Emailgif: require('../../assets/gif/email.gif'),
