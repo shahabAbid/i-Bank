@@ -1,69 +1,183 @@
-import { View, Text, TouchableOpacity, Image } from 'react-native';
-import React, { useRef, useState } from 'react';
-import styles from './style';
-import { appIcons } from '../../../../shared/assets';
-import AppSearchBar from '../../../../components/primitive/AppSearchBar';
+import React, { useEffect, useRef, useState } from 'react';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  Image,
+  Modal,
+  Alert,
+  FlatList,
+  ScrollView,
+} from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
-import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
+import AppSearchBar from '../../../../components/primitive/AppSearchBar';
+import { appIcons } from '../../../../shared/assets';
+import styles from './style';
+import { AppColors, AppFontsFamily, AppFontSize, WP } from '../../../../shared/exporter';
 
 const Branch = ({ navigation }: any) => {
-  const mapRef = useRef<MapView>(null);
-  // const [input, setinput] = useState('');
-  const [region, setregion] = useState({
+  const [visibility, setVisibility] = useState(false);
+  const [searchText, setSearchText] = useState('');
+  const [suggestions, setSuggestions] = useState<any[]>([]);
+  const [region, setRegion] = useState({
     latitude: 24.872009183987874,
     longitude: 67.19700085362547,
-    latitudeDelta: 0.0922,
-    longitudeDelta: 0.0421,
+    latitudeDelta: 0.05,
+    longitudeDelta: 0.05,
   });
+
+  const mapRef = useRef<MapView>(null);
+
+ 
+  const fetchLocationSuggestions = async (query: string) => {
+    try {
+      if (!query) return [];
+      const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(
+        query
+      )}&format=json&addressdetails=1&limit=5`;
+
+      const response = await fetch(url, {
+        headers: {
+          'User-Agent': 'I-Bank',
+        },
+      });
+      const data = await response.json();
+
+      return data.map((item: any) => ({
+        name: item.display_name,
+        lat: parseFloat(item.lat),
+        lon: parseFloat(item.lon),
+      }));
+    } catch (error) {
+      Alert.alert('Error fetching locations');
+      return [];
+    }
+  };
+
+ 
+  const handleSearch = async (text: string) => {
+    setSearchText(text);
+    const results = await fetchLocationSuggestions(text);
+    setSuggestions(results);
+  };
+
+   useEffect(() => {
+    const loadInitialSuggestions = async () => {
+      const results = await fetchLocationSuggestions('Karachi');
+      setSuggestions(results);
+    };
+
+    loadInitialSuggestions();
+  }, []);
+
+ 
+  const handleSelect = (item: any) => {
+    const newRegion = {
+      latitude: item.lat,
+      longitude: item.lon,
+      latitudeDelta: 0.05,
+      longitudeDelta: 0.05,
+    };
+    setRegion(newRegion);
+    mapRef.current?.animateToRegion(newRegion, 1000);
+    setVisibility(false);
+    setSearchText(item.name);
+    setSuggestions([]);
+  };
+
   return (
     <View style={styles.container}>
+      
       <View style={styles.wrapper}>
-        <TouchableOpacity onPress={() => navigation.goBack('BottomNavigator')}>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
           <Image source={appIcons.BackIcon} style={styles.backIcon} />
         </TouchableOpacity>
         <Text style={styles.headingtext}>Search</Text>
       </View>
 
+      
       <View style={styles.mapframe}>
-        <MapView style={styles.mapview} initialRegion={region} region={region} >
-          <Marker coordinate={region}/>
+        <MapView ref={mapRef} style={styles.mapview} region={region}>
+          <Marker coordinate={region} />
         </MapView>
-      </View >
+      </View>
 
-      <View >
-         <GooglePlacesAutocomplete
-          placeholder="Search Here"
-          fetchDetails
-          onPress={(data, details = null) => {
-            if (!details) return;
+      
+      <TouchableOpacity
+        activeOpacity={1}
+        onPress={() => setVisibility(true)}
+      >
+        <AppSearchBar
+          placeholder="Search location"
+          editable={false}
+          appSearchContainer={[styles.searchcontainer,{marginBottom: WP('10')}]}
+          leftIcon={<Image source={appIcons.Searchleft} />}
+          value={searchText}
+        />
+      </TouchableOpacity>
 
-            const loc = details.geometry.location;
+      
+      <Modal
+        animationType="slide"
+        visible={visibility}
+        transparent
+        onRequestClose={() => setVisibility(false)}
+      >
+        <View style={styles.modalOverlay}>
+          <View style={styles.modalbox}>
+            
+            <AppSearchBar
+              placeholder="Search Here"
+              editable={true}
+              value={searchText}
+              onChangeText={handleSearch}
+              appSearchContainer={styles.searchcontainer}
+              leftIcon={<Image source={appIcons.Searchleft} />}
+            />
 
-            const newRegion = {
-              latitude: loc.lat,
-              longitude: loc.lng, 
-              latitudeDelta: 0.05,
-              longitudeDelta: 0.05,
-            };
+            
+            <FlatList
+              data={suggestions}
+              keyExtractor={(item) => item.name}
+              renderItem={({ item }) => (
+                
+                <View style={{
+                  width: '85%',
+                  flexDirection: 'row',
+                    height: WP('17'),
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginTop: 10,
+                    borderBottomWidth: 2,
+                    borderColor: '#bfbfbf',
+                    alignSelf: 'center',
+                }}>
+                 
 
-            setregion(newRegion);
-            mapRef.current?.animateToRegion(newRegion, 1000);
-          }}
-          query={{
-            key: 'AIzaSyBS8zW2ewFMyeJI_Rbqr0cr_7RiV5-GcLg',
-            language: 'en',
-          }}
-          styles={{
-            container: styles.searchbar,
-            listView: { backgroundColor: 'red' },
-          }}
-        /> 
+                <Image source={appIcons.Marker} style={{marginStart: WP('4')}}/>
+                <TouchableOpacity
+                  style={{
+                    width: '90%',
+                    marginStart: WP('4'),
+                  }}
+                  onPress={() => handleSelect(item)}
+                >
+                  
+                  <Text style={{
+                    fontSize: AppFontSize.BODY1, 
+                    fontFamily: AppFontsFamily.Poppins_Medium, 
+                    color: AppColors.Neutrals.DarkGray}}>{item.name}</Text>
+                   
+                </TouchableOpacity>
+                </View>
+                 
+              )}
+            />
+
+            
+          </View>
         </View>
-
-
-      
-       
-      
+      </Modal>
     </View>
   );
 };

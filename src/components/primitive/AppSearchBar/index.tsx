@@ -71,6 +71,7 @@ const AppSearchBar: React.FC<Props> = ({
           AppSearchInput(rightIcon, rightText),
           appSearchInput,
         ]}
+        placeholderTextColor={AppColors.Neutrals.MediumGray}
         placeholder={placeHolder}
         onChangeText={onChangeText}
         value={value}

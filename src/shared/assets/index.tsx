@@ -18,6 +18,7 @@ export const appImages = {
 
 // App Icons
 export const appIcons = {
+    Marker: require('../../assets/svg/Marker.png'),
     BackIcon: require('../../assets/svg/BackIcon.png'),
     EyeIcon: require('../../assets/svg/eye1.png'),
     closeEyeIcon: require('../../assets/svg/eye2.png'),

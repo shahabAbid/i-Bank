@@ -29,18 +29,25 @@ const styles = StyleSheet.create({
   },
 
   mapframe:{
-    width: '100%',
-    height: WP('80'),
+    flex: 1,
     backgroundColor: AppColors.Neutrals.White,
     marginTop: WP('4'),
   },
 
-  searchbar:{
-    marginTop: WP('10'),
+ 
+
+  
+
+  searchcontainer:{
+    marginTop: WP('5'),
     width: '90%',
-    height: WP('15'),
-    alignSelf: 'center',
-    borderRadius: 25,
+    height: WP('12'),
+    justifyContent: 'center',
+    borderRadius: 15,
+    flexDirection: 'row',
+    backgroundColor: AppColors.Neutrals.White,
+    borderWidth: 2,
+    borderColor: '#BFBFBF',
   },
 
   mapview:{
@@ -48,7 +55,25 @@ const styles = StyleSheet.create({
     height: '100%',
     borderRadius: 15,
     alignSelf: 'center',
-  }
+  },
+
+  modalbox:{
+    width: '100%',
+    height: WP('102'),
+    borderTopLeftRadius: 35,
+    borderTopRightRadius: 35,
+    position: 'absolute',
+    bottom: 0,
+    backgroundColor: AppColors.Neutrals.White,
+    elevation: 5,
+  },
+
+  modalOverlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0,0,0,0.5)',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+  },
 })
 
 export default styles;
