@@ -27,6 +27,44 @@ const styles = StyleSheet.create({
      marginLeft: WP('8%'),
      tintColor: '#000',
   },
+
+    wrapper2:{
+      width: '100%',
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      marginTop: WP('5'),
+      paddingLeft: WP('9'),
+      paddingRight: WP('5'),
+    },
+
+    secondheadings:{
+      fontSize: AppFontSize.TITLE3,
+      fontFamily: AppFontsFamily.Poppins_SemiBold,
+      color: AppColors.Neutrals.LightGray,
+    },
+
+    wrapper3:{
+      width: '90%',
+      height: WP('15'),
+      alignSelf: 'center',
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      marginTop: WP('5'),
+      
+      marginLeft: WP('14'),
+      marginRight: WP('12'),
+      borderBottomWidth: 2,
+      borderColor: AppColors.Neutrals.LightGray,
+    },
+
+    text:{
+      fontFamily: AppFontsFamily.Poppins_Medium,
+      fontSize: AppFontSize.BODY1,
+      color: AppColors.Neutrals.DarkGray,
+
+    }
 })
 
 export default styles;

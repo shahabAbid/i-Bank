@@ -98,7 +98,10 @@ const Branch = ({ navigation }: any) => {
       
       <View style={styles.mapframe}>
         <MapView ref={mapRef} style={styles.mapview} region={region}>
-          <Marker coordinate={region} />
+          <Marker 
+          pinColor={AppColors.Primary.DarkBlue}
+          coordinate={region} 
+          />
         </MapView>
       </View>
 
@@ -108,10 +111,10 @@ const Branch = ({ navigation }: any) => {
         onPress={() => setVisibility(true)}
       >
         <AppSearchBar
-          placeholder="Search location"
+          placeHolder="Search location"
           editable={false}
-          appSearchContainer={[styles.searchcontainer,{marginBottom: WP('10')}]}
-          leftIcon={<Image source={appIcons.Searchleft} />}
+          appSearchContainer={[styles.searchcontainer,{marginBottom: WP('10'), backgroundColor: AppColors.Primary.DarkBlue}]}
+          leftIcon={<Image source={appIcons.Searchleft} style={{tintColor: AppColors.Neutrals.White}} />}
           value={searchText}
         />
       </TouchableOpacity>
@@ -127,7 +130,7 @@ const Branch = ({ navigation }: any) => {
           <View style={styles.modalbox}>
             
             <AppSearchBar
-              placeholder="Search Here"
+              placeHolder="Search Here"
               editable={true}
               value={searchText}
               onChangeText={handleSearch}

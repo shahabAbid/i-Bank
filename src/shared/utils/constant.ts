@@ -7,21 +7,21 @@ export const APP_CONST = {
    card_data : [
      
       {
-        id: 2,
+        id: 1,
         Image: require('../../assets/Images/DigitalCard2.png'),
         name: 'SHAHAB ABID',
         // Acc: '1234 **** **** 1121',
         // BankName: 'IBank',
       },
       {
-        id: 3,
+        id: 2,
         Image: require('../../assets/Images/DigitalCard3.png'),
         name: 'SHAHAB ABID',
         Acc: '1234 **** **** 1121',
         BankName: 'I-Bank',
       },
       {
-        id: 4,
+        id: 3,
         Image: require('../../assets/Images/DigitalCard4.png'),
         name: 'SHAHAB ABID',
         Acc: '1234 **** **** 1121',
@@ -47,5 +47,23 @@ export const APP_CONST = {
       {id:2, Image: appImages.Search2, tittle: 'Interest rate', tittle2: 'Search for interest rate', Screen: 'Interestrate' },
       {id:3, Image: appImages.Search3, tittle: 'Exchange rate', tittle2: 'Search for exchange rate', Screen: 'Exchangerate'},
       {id:4, Image: appImages.Search4, tittle: 'Exchange', tittle2: 'Exchange amount of money', Screen: 'Exchange'},
+    ],
+
+    interestrate_data: [
+      {id:1, tittle: 'Individual customers', deposite: '1m', interestrate: '4.5%'},
+      {id:2, tittle: 'Individual customers', deposite: '2m', interestrate: '4.5%'},
+      {id:3, tittle: 'Individual customers', deposite: '4m', interestrate: '4.5%'},
+      {id:4, tittle: 'Individual customers', deposite: '7m', interestrate: '4.5%'},
+      {id:5, tittle: 'Individual customers', deposite: '8m', interestrate: '4.5%'},
+      {id:6, tittle: 'Individual customers', deposite: '12m', interestrate: '4.5%'},
+      {id:7, tittle: 'Corporate customers', deposite: '1m', interestrate: '4.5%'},
+      {id:8, tittle: 'Corporate customers', deposite: '2m', interestrate: '4.5%'},
+      {id:9, tittle: 'Corporate customers', deposite: '4m', interestrate: '4.5%'},
+      {id:10, tittle: 'Corporate customers', deposite: '7m', interestrate: '4.5%'},
+      {id:11, tittle: 'Corporate customers', deposite: '8m', interestrate: '4.5%'},
+
     ]
 };
+
+
+    
