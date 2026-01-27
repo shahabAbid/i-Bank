@@ -62,7 +62,9 @@ export const APP_CONST = {
       {id:10, tittle: 'Corporate customers', deposite: '7m', interestrate: '4.5%'},
       {id:11, tittle: 'Corporate customers', deposite: '8m', interestrate: '4.5%'},
 
-    ]
+    ],
+
+    
 };
 
 

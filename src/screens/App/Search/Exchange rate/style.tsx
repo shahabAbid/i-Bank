@@ -26,44 +26,42 @@ const styles = StyleSheet.create({
      tintColor: '#000',
   },
 
-  cardstyle:{
-    width: '90%',
-    alignSelf: 'center',
-    height: WP('28'),
-    backgroundColor: AppColors.Neutrals.White,
-    borderRadius: 15,
-    elevation: 5,
-    marginTop: WP('10')
-  },
+    wrapper2:{
+      width: '100%',
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      marginTop: WP('5'),
+      paddingLeft: WP('9'),
+      paddingRight: WP('5'),
+    },
 
-  wrapper2:{
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
+    secondheadings:{
+      fontSize: AppFontSize.TITLE3,
+      fontFamily: AppFontsFamily.Poppins_SemiBold,
+      color: AppColors.Neutrals.LightGray,
+    },
 
-  wrapper3:{
-    flexDirection: 'column',
-    
-  },
+    wrapper3: {
+      flexDirection: 'row',
+      width: '90%',
+      height: WP('12'),
+      backgroundColor: AppColors.Neutrals.White,
+      marginTop: WP('6'),
+      alignItems: 'center',
+      // paddingStart: WP('8'),
+      borderBottomWidth: 2,
+      alignSelf: 'center',
+      marginStart: WP('3'),
+      borderBottomColor: AppColors.Neutrals.LightSilver,
+    },
 
-  cardtext1:{
-    fontSize: AppFontSize.TITLE3,
-    fontFamily: AppFontsFamily.Poppins_SemiBold,
-    color: AppColors.Neutrals.DarkGray,
-    marginStart: WP('5'),
-    marginTop: WP('5'),
-  },
-
-  cardtext2:{
-    fontFamily: AppFontsFamily.Poppins_Medium,
-    fontSize: AppFontSize.CAPTION2,
-    color: AppColors.Neutrals.MediumGray,
-    marginStart: WP('5'),
-  },
-
-  imagestyle:{
-    marginRight: WP('3'),
-    marginTop: WP('4'),
-  }
+ 
+    countryname:{
+      fontFamily: AppFontsFamily.Poppins_Medium,
+      fontSize: AppFontSize.BODY1,
+      color: AppColors.Neutrals.DarkGray,
+      marginStart: WP('5'),
+    }
 });
 export default styles;

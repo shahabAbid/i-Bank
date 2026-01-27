@@ -37,7 +37,17 @@ export const appIcons = {
     Creditcard: require('../../assets/svg/Group3.png'),
     Transactionreport: require('../../assets/svg/Group2.png'),
     Beneficiary : require('../../assets/svg/Group1.png'),
-    Searchleft: require('../../assets/svg/search1.png')
+    Searchleft: require('../../assets/svg/search1.png'),
+    Vietnam: require('../../assets/svg/flags/VN.png'),
+    Nicaragua: require('../../assets/svg/flags/NI.png'),
+    Korea: require('../../assets/svg/flags/VN.png'),
+    Russia: require('../../assets/svg/flags/RU.png'),
+    China: require('../../assets/svg/flags/CN.png'),
+    Portuguese: require('../../assets/svg/flags/PT.png'),
+    French: require('../../assets/svg/flags/FR.png'),
+    Pound: require('../../assets/svg/flags/EN.png'),
+
+
 }
 export const appGifs = {
   Emailgif: require('../../assets/gif/email.gif'),
