@@ -40,7 +40,7 @@ export const appIcons = {
     Searchleft: require('../../assets/svg/search1.png'),
     Vietnam: require('../../assets/svg/flags/VN.png'),
     Nicaragua: require('../../assets/svg/flags/NI.png'),
-    Korea: require('../../assets/svg/flags/VN.png'),
+    Korea: require('../../assets/svg/flags/KR.png'),
     Russia: require('../../assets/svg/flags/RU.png'),
     China: require('../../assets/svg/flags/CN.png'),
     Portuguese: require('../../assets/svg/flags/PT.png'),
