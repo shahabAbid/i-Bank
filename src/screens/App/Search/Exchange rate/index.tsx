@@ -23,30 +23,37 @@ const Exchangerate = ({ navigation }: any) => {
     { id: 8, Image: appIcons.Korea, name: 'Korea', code: 'KRW', Buy: '', Sell: '' },
   ]);
 
-  // const [buyprice , setbuyprice] = useState('0');
-  // const [sellprice , setsellprice] = useState('0');
+  
 
   useEffect(() => {
-    fetch('https://open.er-api.com/v6/latest/USD')
-      .then(res => res.json())
-      .then(json => {
-        const spread = 0.005;
+  const fetchRates = async () => {
+    try {
+      const res = await fetch('https://open.er-api.com/v6/latest/USD');
+      const json = await res.json();
+      console.log(' ya mera data ha',JSON.stringify(json,null,2))
+      const spread = 0.005;
 
-        const updated = data.map(item => {
-          const rate = json.rates[item.code];
+      const updated = data.map(item => {
+        const rate = json.rates[item.code];
 
-          return rate
-            ? {
-                ...item,
-                Buy: (rate * (1 - spread)).toFixed(2),
-                Sell: (rate * (1 + spread)).toFixed(2),
-              }
-            : item;
-        });
-
-        setData(updated);
+        return rate
+          ? {
+              ...item,
+              Buy: (rate * (1 - spread)).toFixed(2),
+              Sell: (rate * (1 + spread)).toFixed(2),
+            }
+          : item;
       });
-  }, []);
+
+      setData(updated);
+    } catch (error) {
+      console.log('Error fetching exchange rates:', error);
+    }
+  };
+
+  fetchRates();
+}, []);
+
 
   const renderitem = ({ item }: any) => (
     <View style={styles.wrapper3}>

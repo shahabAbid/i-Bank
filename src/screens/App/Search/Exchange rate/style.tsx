@@ -9,6 +9,7 @@ import {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: AppColors.Neutrals.White,
   },
 
   wrapper: {
@@ -53,10 +54,8 @@ const styles = StyleSheet.create({
     backgroundColor: AppColors.Neutrals.White,
     marginTop: WP('6'),
     alignItems: 'center',
-    // paddingStart: WP('8'),
     borderBottomWidth: 2,
     alignSelf: 'center',
-
     marginStart: WP('3'),
     borderBottomColor: AppColors.Neutrals.LightSilver,
   },
@@ -83,7 +82,6 @@ const styles = StyleSheet.create({
   },
 
   countryCol: {
-    flex: 2.2,
     flexDirection: 'row',
     alignItems: 'center',
   },
