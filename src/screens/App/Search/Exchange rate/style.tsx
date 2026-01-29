@@ -71,14 +71,12 @@ const styles = StyleSheet.create({
     fontSize: AppFontSize.BODY1,
     fontFamily: AppFontsFamily.Poppins_Medium,
     color: AppColors.Neutrals.DarkGray,
-
   },
 
   selltext: {
     fontSize: AppFontSize.BODY1,
     fontFamily: AppFontsFamily.Poppins_Medium,
     color: AppColors.Neutrals.DarkGray,
-    
   },
 
   countryCol: {

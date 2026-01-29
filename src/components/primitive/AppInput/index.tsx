@@ -192,10 +192,10 @@ const styles = StyleSheet.create({
 
   rightText: {
     position: 'absolute',
-    right: WP('4'),
+    right: WP('10'),
     color: AppColors.Neutrals.DarkGray,
     fontSize: AppFontSize.BODY1,
-    fontFamily: AppFontsFamily.Poppins_Black,
+    fontFamily: AppFontsFamily.Poppins_Medium,
   },
 
   leftText: {

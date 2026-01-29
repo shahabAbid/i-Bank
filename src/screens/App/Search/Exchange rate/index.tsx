@@ -101,6 +101,7 @@ const Exchangerate = ({ navigation }: any) => {
         keyExtractor={item => item.id.toString()}
         renderItem={renderitem}
       />
+
     </View>
   );
 };

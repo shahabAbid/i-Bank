@@ -14,6 +14,7 @@ export const appImages = {
     Search2: require('../../assets/Images/Group 478.png'),
     Search3: require('../../assets/Images/Group 477.png'),
     Search4: require('../../assets/Images/Group 490.png'),
+    Mainimg: require('../../assets/Images/Exchangescreenimg.png'),
 };
 
 // App Icons
@@ -46,6 +47,9 @@ export const appIcons = {
     Portuguese: require('../../assets/svg/flags/PT.png'),
     French: require('../../assets/svg/flags/FR.png'),
     Pound: require('../../assets/svg/flags/EN.png'),
+    Arrow:require('../../assets/svg/Arrow.png'),
+    InputArrow: require('../../assets/svg/Inputarrow.png')
+    
 
 
 }
