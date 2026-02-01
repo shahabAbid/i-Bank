@@ -56,6 +56,8 @@ const Exchange = ({ navigation }: any) => {
         console.log('Error fetching exchange rates:', error);
       }
     };
+
+    fetchrates();
   }, []);
 
   const renderitem = ({ item }: any) => {
